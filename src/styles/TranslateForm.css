@@ -1,0 +1,26 @@
+.translate-form {
+    background-color: var(--main-color);
+    padding: 16px;
+  }
+  
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+  }
+  
+  button {
+    background-color: var(--second-color);
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  
+  .translation {
+    background-color: var(--third-color);
+    color: white;
+    padding: 8px;
+    margin-top: 8px;
+  }
+  

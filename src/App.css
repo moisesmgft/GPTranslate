@@ -1,0 +1,27 @@
+/* App.css */
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  background-color: var(--background-color);
+  color: var(--secondary-text-color);
+  text-align: center;
+  padding: 10px;
+}
+
+main {
+  flex-grow: 1;
+  overflow-y: auto; /* Allow main content to scroll */
+  padding: 10px;
+}
+
+footer {
+  background-color: var(--background-color);
+  color: var(--primary-text-color);
+  text-align: center;
+  padding: 10px;
+}

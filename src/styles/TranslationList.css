@@ -1,0 +1,47 @@
+/* TranslationList.css */
+
+@import url('./variables.css');
+
+.translation-list {
+  background-color: var(--background-color); /* Use the primary color variable */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Style each request and response pair */
+.translation-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; /* Add some spacing between request-response pairs */
+}
+
+/* Style request bubbles */
+.request-bubble {
+  background-color: var(--primary-color); /* Use the primary color variable */
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 70%; /* Limit the width of request bubbles */
+  word-wrap: break-word; /* Wrap long words to the next line */
+  align-self: flex-end; /* Align request bubbles to the right */
+  color: var(--primary-text-color); /* Use the primary text color variable */
+}
+
+/* Style response bubbles */
+.response-bubble {
+  background-color: var(--secondary-color); /* Use the third color variable */
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 70%; /* Limit the width of response bubbles */
+  word-wrap: break-word; /* Wrap long words to the next line */
+  align-self: flex-start; /* Align response bubbles to the left */
+  color: var(--secondary-text-color); /* Use the secondary text color variable */
+}
+
+.translation-bubble {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
