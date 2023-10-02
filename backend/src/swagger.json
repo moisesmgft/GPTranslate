@@ -1,0 +1,19 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "GPTranslate API",
+    "version": "1.0.0",
+    "description": "API to request translations from Japanese to Portuguese.",
+    "license": {
+      "name": "Licensed Under MIT",
+      "url": "https://spdx.org/licenses/MIT.html"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Development server"
+    }
+  ],
+  "paths": {}
+}
