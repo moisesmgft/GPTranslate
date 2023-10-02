@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import mockDB from '../services/mockDB';
 import mockTranslation from '../services/mockTranslation';
 
+import '../styles/TranslateForm.css';
+
 const TranslateForm = ({ onTranslationSubmit }) => {
   const [inputText, setInputText] = useState('');
   const [translation, setTranslation] = useState('');
@@ -25,13 +27,15 @@ const TranslateForm = ({ onTranslationSubmit }) => {
 
   return (
     <div className="translate-form">
-      <textarea
-        rows="4"
-        placeholder="Enter Japanese text..."
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-      ></textarea>
-      <button onClick={handleTranslate}>Translate</button>
+      <div className="input-container">
+        <textarea
+          rows="4"
+          placeholder="Enter Japanese text..."
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+        ></textarea>
+        <button onClick={handleTranslate}>Translate</button>
+      </div>
     </div>
   );
 };
