@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import mockDB from '../services/mockDB';
 import mockTranslation from '../services/mockTranslation';
@@ -11,8 +12,10 @@ const TranslateForm = ({ onTranslationSubmit }) => {
 
   const handleTranslate = async () => {
     try {
-      // Call the mockTranslation function from the imported module
-      const mockTranslatedResult = await mockTranslation.translateJapaneseToPortuguese(inputText);
+      // Call the mockTranslation function from the import  d module
+      const mockTranslatedResult = await axios.post('http://localhost:8080/translations', {
+        phrase: inputText,
+      });
       // Set the translation based on the result
       setTranslation(mockTranslatedResult.translation);
       // Insert the translation into the mock database

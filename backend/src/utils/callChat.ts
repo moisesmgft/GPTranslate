@@ -16,6 +16,8 @@ export const callChat: any = async (text: string) => {
       max_tokens: 1000,
     });
 
+    console.log(texts.data.choices[0]!.message!.content!);
+
     const json = JSON.parse(texts.data.choices[0]!.message!.content!);
 
     const chatObject = {
@@ -25,6 +27,6 @@ export const callChat: any = async (text: string) => {
     return chatObject;
   } catch (error) {
     console.log('An error occurred:', error);
-    return "callChat(text)"; // Recursive call if an error occurred
+    return callChat(text); // Recursive call if an error occurred
   }
 };

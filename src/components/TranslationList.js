@@ -7,7 +7,7 @@ const TranslationList = ({ translations }) => {
       {translations.map((item, index) => (
         <div key={index} className="translation-bubble">
           <div className="request-bubble">
-            <p>{item.inputText}</p>
+            <p>{item.prompt}</p>
           </div>
           <div className="response-bubble">
             <p>{item.translation}</p>

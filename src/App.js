@@ -1,18 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import TranslateForm from './components/TranslateForm';
 import TranslationList from './components/TranslationList';
-import mockDB from './services/mockDB'; // Import mockDB
-import './App.css'
+import axios from 'axios';
+import './App.css';
 
 const App = () => {
   const [translations, setTranslations] = useState([]);
 
   // Function to refresh the translation history
-  const refreshTranslationHistory = () => {
-    // Fetch the latest translations and update the 'translations' state
-    const latestTranslations = mockDB.getAllTranslations();
-    setTranslations(latestTranslations);
+  const refreshTranslationHistory = async () => {
+    try {
+      // Fetch the latest translations and update the 'translations' state
+      const { data: latestTranslations } = await axios.get("http://localhost:8080/translations");
+      setTranslations(latestTranslations);
+    } catch (error) {
+      console.error('An error occurred while fetching data:', error);
+    }
   };
+
+  // Call refreshTranslationHistory once when the component mounts
+  useEffect(() => {
+    refreshTranslationHistory();
+  }, []);
 
   return (
     <div className="app">
